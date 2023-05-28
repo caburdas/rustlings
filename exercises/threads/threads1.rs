@@ -7,7 +7,7 @@
 // should collect their return values into a vector.
 
 
-use std::{thread, result};
+use std::thread;
 use std::time::{Duration, Instant};
 
 fn main() {
