@@ -1,25 +1,24 @@
 // hashmaps3.rs
-
-// A list of scores (one per line) of a soccer match is given. Each line
-// is of the form :
-// <team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>
+//
+// A list of scores (one per line) of a soccer match is given. Each line is of
+// the form : "<team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>"
 // Example: England,France,4,2 (England scored 4 goals, France 2).
-
-// You have to build a scores table containing the name of the team, goals
-// the team scored, and goals the team conceded. One approach to build
-// the scores table is to use a Hashmap. The solution is partially
-// written to use a Hashmap, complete it to pass the test.
-
+//
+// You have to build a scores table containing the name of the team, goals the
+// team scored, and goals the team conceded. One approach to build the scores
+// table is to use a Hashmap. The solution is partially written to use a
+// Hashmap, complete it to pass the test.
+//
 // Make me pass the tests!
-
-// Execute `rustlings hint hashmaps3` or use the `hint` watch subcommand for a hint.
+//
+// Execute `rustlings hint hashmaps3` or use the `hint` watch subcommand for a
+// hint.
 
 
 use std::collections::HashMap;
 
-// A structure to store team name and its goal details.
+// A structure to store the goal details of a team.
 struct Team {
-    name: String,
     goals_scored: u8,
     goals_conceded: u8,
 }
@@ -45,7 +44,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
             team1.goals_conceded += team_2_score;
         } else {
            let team1 = Team{
-                name : team_1_name.clone(),
                 goals_scored : team_1_score,
                 goals_conceded : team_2_score,
             };
@@ -58,7 +56,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
             team2.goals_conceded += team_1_score;
         } else {
            let team2 = Team{
-                name : team_2_name.clone(),
                 goals_scored : team_2_score,
                 goals_conceded : team_1_score
             };
